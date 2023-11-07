@@ -1,5 +1,9 @@
 /*
-longest increasing subsequence problem*/
+longest increasing subsequence problem
+Using recursion
+time - O(2^n)
+space - O(n)
+*/
 
 #include<iostream>
 using namespace std;
