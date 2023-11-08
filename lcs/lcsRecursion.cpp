@@ -1,3 +1,10 @@
+/*
+goal : find the length of longest common subsequence
+using recursion
+time - O(2^n)  due to two possibilities
+space - O(n)
+*/
+
 #include <bits/stdc++.h>
 #include<iostream>
 

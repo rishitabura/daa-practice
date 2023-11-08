@@ -1,3 +1,11 @@
+/*
+goal : find the length of longest common subsequence
+using memoization (top down approch)
+time - O(m*n)  due to two possibilities
+space - O(m*n)
+*/
+
+
 #include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
