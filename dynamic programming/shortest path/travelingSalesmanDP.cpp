@@ -4,149 +4,95 @@ Without using DP
 Time - O()
 */
 
-#include <iostream>
+// C++ program for the above approach
+#include <bits/stdc++.h>
 using namespace std;
-#define V 4
-#define INFINITE 9999
 
-int visited[V] = {0};
-int cost = 0;
-void travelingsalesman(int G[V][V], int source)
+// Function to find the minimum
+// cost path for all the paths
+void findMinRoute(vector<vector<int>> tsp)
 {
+    int sum = 0;
+    int counter = 0;
+    int j = 0, i = 0;
+    int min = INT_MAX;
+    map<int, int> visitedRouteList;
 
-    int adj = INFINITE;
-    // int cost = 0;
-    int min = INFINITE;
+    // Starting from the 0th indexed
+    // city i.e., the first city
+    visitedRouteList[0] = 1;
+    int route[tsp.size()];
 
-    visited[source] = 1;
-
-    cout << source + 1 << " ";
-
-    for (int i = 0; i < V; i++)
+    // Traverse the adjacency
+    // matrix tsp[][]
+    while (i < tsp.size() && j < tsp[i].size())
     {
-        if (G[source][i] != 0 && !visited[i])
+
+        // Corner of the Matrix
+        if (counter >= tsp[i].size() - 1)
         {
-            if (G[source][i] < min)
+            break;
+        }
+
+        // If this path is unvisited then
+        // and if the cost is less then
+        // update the cost
+        if (j != i && (visitedRouteList[j] == 0))
+        {
+            if (tsp[i][j] < min)
             {
-                min = G[source][i];
-                adj = i;
+                min = tsp[i][j];
+                route[counter] = j + 1;
             }
         }
-    }
-    // cost += min;
-    if (min != INFINITE)
-    {
-        cost = cost + min;
-    }
-    // cout << "\nCost : " << cost << endl;
+        j++;
 
-    // to return back from last node to first node
-    if (adj == INFINITE)
-    {
-        adj = 0;
-        cout << adj + 1;
-        cost = cost + G[source][adj];
-        // cout << "\nCost : " << cost;
-        return;
+        // Check all paths from the
+        // ith indexed city
+        if (j == tsp[i].size())
+        {
+            sum += min;
+            min = INT_MAX;
+            visitedRouteList[route[counter] - 1] = 1;
+            j = 0;
+            i = route[counter] - 1;
+            counter++;
+        }
     }
 
-    travelingsalesman(G, adj);
+    // Update the ending city in array
+    // from city which was last visited
+    i = route[counter - 1] - 1;
+
+    for (j = 0; j < tsp.size(); j++)
+    {
+
+        if ((i != j) && tsp[i][j] < min)
+        {
+            min = tsp[i][j];
+            route[counter] = j + 1;
+        }
+    }
+    sum += min;
+
+    // Started from the node where
+    // we finished as well.
+    cout << ("Minimum Cost is : ");
+    cout << (sum);
 }
+
+// Driver Code
 int main()
 {
-    // int G[5][5] = {
-    //     {12, 30, 33, 10, 45},
-    //     {56, 22, 9, 15, 18},
-    //     {29, 13, 8, 5, 12},
-    //     {33, 28, 16, 10, 3},
-    //     {1, 4, 30, 24, 20}};
-    int G[][V] = {{0, 10, 15, 20},
-                 {10, 0, 35, 25},
-                 {15, 35, 0, 30},
-                 {20, 25, 30, 0}};
 
-    travelingsalesman(G, 0);
-    cout << "\nCost : " << cost;
-    return 0;
+    // Input Matrix
+    vector<vector<int>> tsp = {{-1, 10, 15, 20},
+                               {5, -1, 9, 10},
+                               {6, 13, -1, 12},
+                               {8, 8, 9, -1}};
+
+    // Function Call
+    findMinRoute(tsp);
 }
 
-// #include <iostream>
-// using namespace std;
-// #define V 4
-// #define INFINITE 9999
-
-// int visited[V] = {0};
-
-// bool allVisited(int visited[])
-// {
-//     for (int i = 0; i < V; ++i)
-//     {
-//         if (!visited[i])
-//         {
-//             return false;
-//         }
-//     }
-//     return true;
-// }
-
-// void travelingsalesman(int G[V][V], int source, int &cost)
-// {
-//     int adj = INFINITE;
-//     int min = INFINITE;
-
-//     visited[source] = 1;
-
-//     cout << source + 1 << " ";
-
-//     for (int i = 0; i < V; i++)
-//     {
-//         if (G[source][i] != 0 && !visited[i])
-//         {
-//             if (G[source][i] < min)
-//             {
-//                 min = G[source][i];
-//                 adj = i;
-//             }
-//         }
-//     }
-
-//     if (min != INFINITE)
-//     {
-//         cost = cost + min;
-//     }
-
-//     cout << "\nCost : " << cost << endl;
-
-//     if (adj==INFINITE)
-//     {
-//          adj = 0;
-//         cout << adj + 1;
-//         cost = cost + G[source][adj];
-//         return;
-//     }
-
-//     // if (adj == INFINITE)
-//     // {
-//     //     adj = 0;
-//     //     cout << adj + 1;
-//     //     cost = cost + G[source][adj];
-//     //     cout << "\nCost : " << cost;
-//     //     return;
-//     // }
-
-//     travelingsalesman(G, adj, cost);
-// }
-
-// int main()
-// {
-//     int G[][V] = {{0, 10, 15, 20},
-//                   {10, 0, 35, 25},
-//                   {15, 35, 0, 30},
-//                   {20, 25, 30, 0}};
-
-//     int cost = 0;
-//     travelingsalesman(G, 0, cost);
-//     cout << "\nTotal Cost : " << cost << endl;
-
-//     return 0;
-// }
+// This code is contributed by grand_master.
