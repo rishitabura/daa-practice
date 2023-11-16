@@ -26,8 +26,8 @@ class binarySearchIterative{
     }
     public static void main(String[] args) {
 
-        int[] a = {13};
-        int ans = search(a, 13);
+        int[] a = {11,54,12,14,13};
+        int ans = search(a, 12);
         System.out.println(ans);
 
         

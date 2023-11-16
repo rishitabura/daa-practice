@@ -1,79 +1,84 @@
-/* Time = O(nlogn)
-space = O(n)
+/*
+goal : to sort the array using mergesort
+using divide and conquer
+time - O(nlogn)
+space - O(n)
 */
 
+#include <bits/stdc++.h>
 #include <iostream>
 using namespace std;
 
-void merge(int a[], int l, int h, int mid)
+int c = 0;
+
+void merge(int A[], int l, int h, int mid, int n)
 {
-    int n = 8;
     int i = l;
-    int j = mid+1;
-    int k = 0;
-    int b[n];
+    int j = mid + 1;
+    int B[n];
+    int k = l;
 
     while (i <= mid && j <= h)
     {
-        if (a[i] <= a[j])
+        if (A[i] <= A[j])
         {
-            b[k] = a[i];
+            B[k] = A[i];
             i++;
             k++;
+            c++;
         }
-        else
-        {   
-            b[k] = a[j];
+        if (A[i] > A[j])
+        {
+            B[k] = A[j];
             j++;
             k++;
+            c++;
         }
     }
+
     while (i <= mid)
     {
-        b[k] = a[i];
+        B[k] = A[i];
         i++;
         k++;
     }
     while (j <= h)
     {
-        b[k] = a[j];
+        B[k] = A[j];
         j++;
         k++;
     }
 
     for (int z = l; z <= h; z++)
     {
-        a[z] = b[z-l];
+        A[z] = B[z];
     }
-   
 }
-void mergeSort(int a[], int l, int h)
+
+void mergeS(int A[], int l, int h, int n)
 {
-    int cnt=0;
     if (l < h)
     {
         int mid = (l + h) / 2;
-        mergeSort(a, l, mid);
-        mergeSort(a, mid + 1, h);
-        merge(a, l, h, mid);
-    }
-
-}
-
-void print(int a[], int n)
-{
-    for (int i = 0; i < n; i++)
-    {
-        cout << a[i] << " ";
+        mergeS(A, l, mid, n);
+        mergeS(A, mid + 1, h, n);
+        merge(A, l, h, mid, n);
     }
 }
 
 int main()
 {
-    int arr[] = {9,3,7,5,6,4,8,2};
-    int n = 8;
-    mergeSort(arr, 0, n - 1);
-    print(arr, n);
+    int arr[] = {10, 16, 8, 12, 15, 6, 3, 9, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    mergeS(arr, 0, n - 1,n);
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    cout << "\nTotal number of swaps : " << c;
 
     return 0;
 }

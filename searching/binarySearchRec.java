@@ -19,6 +19,7 @@ public class binarySearchRec {
                 } else if (target < a[mid]) {
                     return search(a, l, mid - 1, target);
                 } else {
+                    
                     return search(a, mid + 1, h, target);
                 }
             }
@@ -32,7 +33,7 @@ public class binarySearchRec {
 
         int[] a = {3,5,65,23,121,23};
         int n = a.length;
-        int ans = search(a, 0, n-1, 2);
+        int ans = search(a, 0, n-1, 121);
         System.out.println(ans);
 
     }
