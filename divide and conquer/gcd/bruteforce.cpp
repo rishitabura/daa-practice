@@ -1,3 +1,10 @@
+/*
+goal : find the gcd of two numbers given
+using Euclid method
+time - O(log(min(m, n)))
+space - O(n)
+*/
+
 #include <iostream>
 using namespace std;
 

@@ -1,7 +1,11 @@
-/* Time = O(nlogn)
+/*
+goal : find the no of incversion i<j and a[i] > a[j]
+min count - 0 (when already  sorted)
+max count  (when in reverse order - descending order)
+time = O(nlogn)
 space = O(n)
 */
-
+#include <bits/stdc++.h>
 #include <iostream>
 using namespace std;
 
@@ -11,7 +15,7 @@ void merge(int a[], int l, int h, int mid)
 {
     int n = 8;
     int i = l;
-    int j = mid+1;
+    int j = mid + 1;
     int k = 0;
     int b[n];
 
@@ -24,9 +28,9 @@ void merge(int a[], int l, int h, int mid)
             k++;
         }
         else
-        {   /// right is less than left
+        { // right is less than left
             b[k] = a[j];
-            cnt+= mid-i+1;
+            cnt += mid - i + 1;
             j++;
             k++;
         }
@@ -46,10 +50,8 @@ void merge(int a[], int l, int h, int mid)
 
     for (int z = l; z <= h; z++)
     {
-        a[z] = b[z-l];
+        a[z] = b[z - l];
     }
-
-   
 }
 void mergeSort(int a[], int l, int h)
 {
@@ -59,7 +61,6 @@ void mergeSort(int a[], int l, int h)
         mergeSort(a, l, mid);
         mergeSort(a, mid + 1, h);
         merge(a, l, h, mid);
-
     }
 }
 
@@ -73,10 +74,12 @@ void print(int a[], int n)
 
 int main()
 {
-    int arr[] = {9,3,7,5,6,4,8,2};
-    int n = 8;
+    // int arr[] = {9,3,7,5,6,4,8,2};
+    int arr[] = {43,39,34,20,6,5,4,1};
+
+    int n = sizeof(arr) / sizeof(arr[0]);
     mergeSort(arr, 0, n - 1);
-    cout << cnt <<endl;
+    cout << cnt << endl;
     print(arr, n);
 
     return 0;

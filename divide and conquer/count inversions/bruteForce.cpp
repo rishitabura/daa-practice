@@ -1,5 +1,8 @@
 /*
-Time = O(n^2)
+goal : find the no of incversion i<j and a[i] > a[j]
+min count - 0 (when already  sorted)
+max count  (when in reverse order - descending order)
+time = O(n^2)
 space = O(1)
 */
 

@@ -46,5 +46,6 @@
         "xstddef": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp"
-    }
+    },
+    "java.project.explorer.showNonJavaResources": false
 }

@@ -1,7 +1,10 @@
 /*
-Time = O(2^n)
-Space = O(n)
-Recurrance relation - T(n) = 2^n-1
+goal : find moves of tower of hanoi
+using divide and conquer (recursion)
+time = O(2^n)
+space = O(n)
+recurrance relation - T(n) = 2T(n-1) + 1;
+no of moves - 2^n-1
 */
 
 #include<iostream>

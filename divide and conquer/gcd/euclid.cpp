@@ -1,3 +1,9 @@
+/*
+goal : find the gcd of two numbers given
+using Euclid method
+time - O(log(min(m, n)))
+space - O(n)
+*/
 #include<iostream>
 using namespace std;
 
@@ -16,6 +22,6 @@ int gcdEuclids(int m, int n)
 }
 int main()
 {
-    cout << gcdEuclids(30,2);
+    cout << gcdEuclids(12,21);
     return 0;
 }

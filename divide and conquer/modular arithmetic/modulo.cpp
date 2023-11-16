@@ -1,3 +1,11 @@
+/*
+goal : find the modular  
+a^n = b%m    =>  a^n%m
+using the formala a^n%m = [(a^n/2 % m) * (a^n/2 %m)] %m
+time - O(log n)
+recurrance relation - T(n) = t(n/2)+1
+space - O(n)
+*/
 #include<iostream>
 using namespace std;
 

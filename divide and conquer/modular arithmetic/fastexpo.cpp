@@ -1,3 +1,9 @@
+/*
+goal: find the power a^n = b
+using divide and conquer
+time - O(log n)
+recurrance relation - T(n) = t(n/2)+1
+*/
 #include<iostream>
 using namespace std;
 
