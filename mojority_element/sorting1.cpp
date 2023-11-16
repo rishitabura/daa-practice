@@ -1,3 +1,8 @@
+/*
+goal : find the element appreaing more then n/2 times in an array
+using sorting
+time - O(nlogn)
+*/
 
 #include <iostream>
 #include <bits/stdc++.h>

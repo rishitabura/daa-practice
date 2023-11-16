@@ -1,7 +1,11 @@
+/*
+goal : find the element appreaing more then n/2 times in an array
+using brute force
+time - O(n^2)
+*/
 #include <iostream>
 using namespace std;
 
-// O(n^2)
 int majorityBrute(int a[], int n)
 {
     for (int i = 0; i < n; i++)

@@ -1,3 +1,9 @@
+/*
+goal : find the element appreaing more then n/2 times in an array
+using divide and conquer
+time - O(nlogn)
+*/
+
 #include <iostream>
 using namespace std;
 
@@ -34,8 +40,6 @@ int majority(int a[], int l, int h)
         
     }
     
-
-
     if (leftcount > (h - l + 1)/ 2)
     {
         return left;
@@ -53,7 +57,8 @@ int majority(int a[], int l, int h)
 
 int main(int argc, char const *argv[])
 {
-    int a[] = {2, 4, 5, 2, 2, 6, 7, 2, 2};
+    // int a[] = {2, 4, 5, 2, 2, 6, 7, 2, 2};
+    int a[] = {3,3,4,2,4,4,2,4,4};
     int n = sizeof(a) / sizeof(a[0]);
     cout << "Majority element : " << majority(a, 0, n - 1);
     return 0;

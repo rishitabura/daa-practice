@@ -1,3 +1,9 @@
+/*
+goal : find the element appreaing more then n/2 times in an array
+using bmoore's voting algo
+time - O(n)
+*/
+
 #include <iostream>
 using namespace std;
 
@@ -32,16 +38,17 @@ int mooreVoting(int a[], int n)
             count1++;
         }
     }
-    if (count1>n/2)
-    {
-        return element;
-    }
+    // if (count1>n/2)
+    // {
+    //     return element;
+    // }
 
-    return -1;
+    // return -1;
+    return (count1>1)? element : -1;
     
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
     int a[] = {2,4,5,2,2,6,7,2,2};
     cout << "Majority element : " << mooreVoting(a,9);
