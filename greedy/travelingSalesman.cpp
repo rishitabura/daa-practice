@@ -1,12 +1,12 @@
 /*
-Goal : To find minimum dist req to go to all nodes and come back agian to source node
-Using Greedy approch
-Time - O(n!)
+goal : To find minimum dist req to go to all nodes and come back agian to source node
+using Greedy approch
+time - O(n!)
 */
 
 #include <iostream>
 using namespace std;
-#define V 4
+#define V 6
 #define INFINITE 9999
 
 int visited[V] = {0};
@@ -54,12 +54,12 @@ void travelingsalesman(int G[V][V], int source)
 }
 int main()
 {
-    // int G[5][5] = {
-    //     {12, 30, 33, 10, 45},
-    //     {56, 22, 9, 15, 18},
-    //     {29, 13, 8, 5, 12},
-    //     {33, 28, 16, 10, 3},
-    //     {1, 4, 30, 24, 20}};
+    // int G[][V] = {
+    //     {0, 30, 33, 10, 45},
+    //     {56, 0, 9, 15, 18},
+    //     {29, 13, 0, 5, 12},
+    //     {33, 28, 16, 0, 3},
+    //     {1, 4, 30, 24, 0}};
     // int G[][V] = {{0, 10, 15, 20},
     //              {10, 0, 35, 25},
     //              {15, 35, 0, 30},
@@ -71,19 +71,18 @@ int main()
     //     { 15, 35, 0, 30 },
     //     { 20, 25, 30, 0 }
     // };
+    // int G[][V] = {
+    //     {0, 10, 15, 20},
+    //     {5, 0, 9, 10},
+    //     {6, 13, 0, 12},
+    //     {8, 8, 9, 0}
+    // };
+
     int G[][V] = {
         {0, 10, 15, 20},
-        {5, 0, 9, 10},
-        {6, 13, 0, 12},
-        {8, 8, 9, 0}
-    };
-
-    // int G[][V] = {
-    //     { 0, 10, 15, 20},
-    //     { 10, 0, 35, 25},
-    //     {15, 35, 0, 30},
-    //     {20, 25, 30, 0}
-    // };
+        {10, 0, 35, 25},
+        {15, 35, 0, 30},
+        {20, 25, 30, 0}};
 
     travelingsalesman(G, 0);
     cout << "\nCost : " << cost;

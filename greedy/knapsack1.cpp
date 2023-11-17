@@ -1,3 +1,7 @@
+/*
+goal : find the maxi profit and wieght of objects should not exceed m
+time - O(nlogn)
+*/
 #include<iostream>
 #include <bits/stdc++.h>
 using namespace std;
