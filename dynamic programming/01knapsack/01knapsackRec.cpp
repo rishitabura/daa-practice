@@ -11,7 +11,7 @@ using namespace std;
 
 int knapsackRec(int p[], int wt[], int m , int n)
 {
-    int k[n+1][m+1];
+    // int k[n+1][m+1];
     if (n == 0 || m==0)
     {
         return 0;
