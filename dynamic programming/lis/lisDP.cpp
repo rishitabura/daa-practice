@@ -18,12 +18,19 @@ int lis(int arr[], int n)
         }
     }
 
+    for (int i = 0; i < n; i++)
+    {
+        cout << lis[i] << " ";
+    }
+    cout << endl;
+    
+
     return *max_element(lis,lis+n);
     
 }
 int main()
 {
-    int arr[] = {10,9,2,5,3,7,101,18};
+    int arr[] = {10,9,2,5,3,7};
     int n = sizeof(arr)/sizeof(int);
 
     cout << lis(arr,n);

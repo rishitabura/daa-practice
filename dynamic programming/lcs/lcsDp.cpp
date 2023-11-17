@@ -45,6 +45,19 @@ int longestCommonSubsequence(string text1, string text2)
         }
     }
 
+
+    for (int i = 0; i <= m; i++)
+    {
+        for (int j = 0; j <= n; j++)
+        {
+            cout << dp[i][j] << " ";
+        }
+        cout << endl;
+
+        
+    }
+    
+
     return dp[m][n];
 }
 int main()
@@ -52,6 +65,6 @@ int main()
     string s1 = "bd";
     string s2 = "abcd";
 
-    cout << longestCommonSubsequence(s1, s2);
+    cout << "ans : " << longestCommonSubsequence(s1, s2);
     return 0;
 }
