@@ -1,12 +1,13 @@
 /*
 goal : To find minimum dist req to go to all nodes and come back agian to source node
-using Greedy approch
-time - O(n!)
+using Recursion
+time - O(n!) - O(n^n)
+space - O(n)
 */
 
 #include <iostream>
 using namespace std;
-#define V 6
+#define V 4
 #define INFINITE 9999
 
 int visited[V] = {0};

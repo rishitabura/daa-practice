@@ -21,12 +21,12 @@ bool cmp(struct object a,struct object b)
 {
     double r1 = (double)a.profit/a.weight;
     double r2 = (double)b.profit/b.weight;
-    return (r1>r2);
+    return (r1>r2);      
 }
 
 double knapsack(struct object a[], int m ,int n)
 {
-    sort(a,a+n,cmp);
+    sort(a,a+n,cmp);        // sorts array in descending order
 
     double ans = 0.0;
     for (int i = 0; i < n; i++)
