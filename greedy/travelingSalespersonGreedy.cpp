@@ -19,7 +19,7 @@ int travelingsalesman(int G[V][V], int source)
 
     visited[current] = 1;
 
-    for (int i = 0; i < V; i++)
+    for (int i = 0; i < V-1; i++)
     {
         int min = INFINITE;
         int nearest = -1;
