@@ -20,7 +20,7 @@ int  optimalMerge(int arr[], int n)
         pq.push(arr[i]);
     }
 
-    int count = 0;
+    int cost = 0;
     while (pq.size() > 1)
     {
         int first = pq.top();
@@ -30,13 +30,13 @@ int  optimalMerge(int arr[], int n)
 
         int weight = first+ second;
 
-        count += weight;
+        cost += weight;
 
         pq.push(weight);
     }
 
-
-    return count;
+    cout << pq.top() << endl;
+    return cost;
     
 }
 int main()
@@ -44,7 +44,7 @@ int main()
     int arr[] = { 2, 3, 4, 5, 6};
     int n = sizeof(arr)/sizeof(arr[0]);
 
-    cout << optimalMerge(arr,n);
+    cout << "Cost : " << optimalMerge(arr,n);
     
     return 0;
 }
