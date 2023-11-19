@@ -83,8 +83,8 @@ void print(int a[], int n)
 
 int main()
 {
-    int arr[] = {9,3,7,5,6,4,8,2};
-    int n = 8;
+    int arr[] = {6,5,4,3,2,1};
+    int n = 6;
     int countInversion = mergeSort(arr, 0, n - 1);
     cout << countInversion <<endl;
     print(arr, n);
