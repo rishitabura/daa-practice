@@ -3,7 +3,8 @@ goal : find the total number of ways or coins equal to the sum
 using recursion
 include or not include
 time - O(2^sum)
- */
+space - O(sum)
+*/
 #include<bits/stdc++.h>
 #include<iostream>
 using namespace std;
@@ -25,9 +26,9 @@ int coinChangeCount(int coins[], int sum, int n)
 
 int main()
 {
-    int coins[] = {1,2,3};
+    int coins[] = {1,5,10};
     int n = sizeof(coins)/sizeof(coins[0]);
-    int sum = 5;
+    int sum = 8;
 
     cout << coinChangeCount(coins, sum, n);
 
