@@ -1,6 +1,6 @@
 /*
 goal : find the element appreaing more then n/2 times in an array
-using bmoore's voting algo
+using moore's voting algo
 time - O(n)
 */
 
@@ -44,7 +44,7 @@ int mooreVoting(int a[], int n)
     // }
 
     // return -1;
-    return (count1>1)? element : -1;
+    return (count1>n/2)? element : -1;
     
 }
 
