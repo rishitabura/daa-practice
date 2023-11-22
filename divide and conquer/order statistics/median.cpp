@@ -1,6 +1,6 @@
 /* 
 goal : find the median oftwo sortd arrays
-time = O(m+n)
+time = O((m + n) log(m + n))
 space = O(n)
 */
 
