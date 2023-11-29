@@ -21,6 +21,7 @@ int majorityBrute(int a[], int n)
         }
         if (count>n/2)
         {
+            cout << "Count = " << count;
             return a[i];
         }
         

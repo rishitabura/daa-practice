@@ -1,3 +1,10 @@
+/*
+goal : given an array, there is one element that occurs exactly once while others appear twice. find the 
+element
+Using binary approch
+time - O(logn)
+*/
+
 #include <bits/stdc++.h>
 #include <iostream>
 using namespace std;
