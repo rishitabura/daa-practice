@@ -48,7 +48,7 @@ void dijkshtras(int G[V][V], int source)
     cout << "Vertex \t Distance from Source" << endl;
     for (int i = 0; i < V; i++)
     {
-        cout << i << " \t\t\t\t" << weight[i] << endl;
+        cout << i << " \t\t" << weight[i] << endl;
     }
 }
 int main()
