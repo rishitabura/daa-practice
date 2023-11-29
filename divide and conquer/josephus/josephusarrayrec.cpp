@@ -10,14 +10,16 @@ int josephus(int n, int k)
 {
     if (n==1)
     {
-        return 0;
+        return 1;
     }
-    return (josephus(n-1,k)+k)%n;
+    // return (josephus(n-1,k)+k)%n;
+    return (josephus(n-1,k)+k-1)%n+1;
+
     
 }
 
 int main(int argc, char const *argv[])
 {
-    cout << josephus(5,2);   
+    cout << josephus(7,3);   
     return 0;
 }

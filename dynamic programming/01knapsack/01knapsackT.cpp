@@ -65,9 +65,9 @@ int knapsackDP(int p[], int wt[], int m, int n)
 int main()
 {
 
-    int p[] = {1, 2, 5, 6};
-    int wt[] = {2, 3, 4, 5};
-    int m = 8;
+    int p[] = { 60, 100, 120 };
+    int wt[] = {10,20,30};
+    int m = 50;
     int n = sizeof(p) / sizeof(int);
 
     cout << knapsackDP(p, wt, m, n);

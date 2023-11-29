@@ -46,8 +46,8 @@ int obstRec(int key[], int freq[], int i, int n)
 }
 int main()
 {
-    int key[] = {10, 20, 30, 40};
-    int freq[] = {4,2,6,3};
+    int key[] = {10, 12,20};
+    int freq[] = {34,8,50};
     int n = sizeof(key) / sizeof(int);
     // cout << n << endl; 
     cout << obstRec(key, freq, 0, n-1);

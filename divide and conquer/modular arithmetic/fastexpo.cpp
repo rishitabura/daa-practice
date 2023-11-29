@@ -20,6 +20,7 @@ int fastExponentiation(int a, int n)
     else
     {
         int r = fastExponentiation(a,n/2);
+        cout << r<< endl;
         if (n%2 == 0)
         {
             return r*r;
@@ -35,6 +36,6 @@ int fastExponentiation(int a, int n)
 
 int main()
 {
-    cout <<  fastExponentiation(5,8);
+    cout <<  fastExponentiation(2,50);
     return 0;
 }

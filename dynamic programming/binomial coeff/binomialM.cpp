@@ -3,7 +3,7 @@ to find binomail expression
 nCr = n-1Cr-1 + n-1Cr
 
 time and number of calls is reduced if we use dp
-time = O(n)
+time = O(n*r)
 using memoization (recursion)
 */
 

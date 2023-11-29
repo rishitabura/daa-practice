@@ -20,12 +20,12 @@ void create(int n)
 
     int a;
 
-    head->data = 0;
+    head->data = 1;
     head->next = NULL;
 
     temp = head;
 
-    for (int i = 1; i < n; i++)
+    for (int i = 2; i <= n; i++)
     {
         new = (struct node *)malloc(sizeof(struct node));
         new->data = i;
@@ -38,7 +38,7 @@ void create(int n)
 
 int josephusList( int k)
 {
-    create(5);
+    create(7);
     struct node *p, *q;
     p = q = head;
     while (p->next!= p)

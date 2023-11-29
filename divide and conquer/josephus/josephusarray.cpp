@@ -22,6 +22,6 @@ int josephus(int n, int k)
 
 int main(int argc, char const *argv[])
 {
-    cout << josephus(10,6);   
+    cout << josephus(7,3);   
     return 0;
 }
