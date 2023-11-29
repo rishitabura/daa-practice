@@ -1,6 +1,6 @@
 /*
 used to calculate the distance of a node from all the other node
-G[i,j] = min(G[,j], G[i,k]+G[k,j])
+G[i,j] = min(G[i,j], G[i,k]+G[k,j])
 k is the intermediate node
 
 time = O(V^3)
