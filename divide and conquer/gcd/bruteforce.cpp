@@ -1,7 +1,7 @@
 /*
 goal : find the gcd of two numbers given
-using Euclid method
-time - O(log(min(m, n)))
+using brute force
+time - O(min(m,n))
 space - O(n)
 */
 
