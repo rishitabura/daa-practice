@@ -66,7 +66,7 @@ void quickSort(int arr[], int l , int h, int n)
 }
 int main()
 {
-    int arr[] = {10,16,8,12,15,6,3,9,5};
+    int arr[] = {4 ,3 ,8 ,4 ,6 ,5};
     int n = sizeof(arr)/sizeof(arr[0]);
 
     cout << "\nUnsorted array : " ;
